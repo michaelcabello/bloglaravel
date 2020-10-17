@@ -1,6 +1,7 @@
 @extends('admin.layout')
 
 
+
 @section('header')
 	    <div class="content-header">
       <div class="container-fluid">
@@ -83,3 +84,26 @@
 		
 @stop
 
+
+@push('styles')
+  <link rel="stylesheet" href="/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+@endpush
+
+@push('scripts')
+  
+  <script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="/adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="/adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <script>
+    $(function () {
+      $("#poststable").DataTable({
+        "responsive": true,
+        "autoWidth": false,
+      });
+      
+    });
+  </script>
+
+@endpush

@@ -35,11 +35,14 @@ Route::group([
         Route::get('/', 'AdminController@index');
         Route::get('posts', 'PostsController@index')->name('admin.posts.index');
         Route::get('posts/create', 'PostsController@create')->name('admin.posts.create');
+        Route::post('posts', 'PostsController@store')->name('admin.posts.store');
+
     }
 );
 //Auth::routes();
 //esta en el archivo Auth.php, alli esta el metodo routes
 //luego ir al archivo AuthRoutheMethods.php
+//C:\laragon\www\blogmichael\vendor\laravel\ui\src\AuthRouteMethods.php:
 
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login');

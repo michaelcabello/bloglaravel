@@ -14,10 +14,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css">
 
-  <link rel="stylesheet" href="/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+
   <!-- Theme style -->
   <link rel="stylesheet" href="/adminlte/css/adminlte.min.css">
+  @stack('styles')
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -149,7 +150,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </li>
     </ul>
   </nav>
-  <!-- /.navbar -->
+
+    <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -196,9 +198,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Header (Page header) -->
      @yield('header')
 
-    <!-- /.content-header -->
-
-    <!-- Main content ira contenido -->
+     @if (session()->has('flashh'))
+        <div class="alert alert-success">{{ session('flashh')}}</div>
+     @endif
 
     @yield('content')
 
@@ -236,20 +238,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/adminlte/js/adminlte.min.js"></script>
+@stack('scripts')
 
-<script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="/adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="/adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script>
-  $(function () {
-    $("#poststable").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-    
-  });
-</script>
 
 </body>
 </html>
