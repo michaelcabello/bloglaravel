@@ -16,17 +16,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('admin/posts', 'Admin\PostsController@index');
 
-Route::get('/', function () {
-    $posts = App\Post::latest('published_at')->get();
-    return view('welcome',compact('posts'));
-});
+//Route::get('/', function () {
+ //   $posts = App\Post::latest('published_at')->get();
+ //   return view('welcome',compact('posts'));
+//});
+
+Route::get('blog/{id}', 'PostsController@show');
+
+
+Route::get('/', 'PagesController@home');
+
+
 
 Route::get('posts', function () {
     return App\Post::all();
 });
 
-
-
+ 
 Route::group([
     'prefix'=>'admin',
     'namespace'=>'Admin',

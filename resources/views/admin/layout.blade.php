@@ -13,6 +13,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="/adminlte/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="/adminlte/css/icheck-bootstrap.min.css">
 
 
   <!-- Theme style -->

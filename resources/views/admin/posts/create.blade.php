@@ -23,7 +23,6 @@
 @stop
 
 
-
 @section('content')
 
  <form method="POST" action="{{ route('admin.posts.store')}}">
@@ -39,16 +38,18 @@
 
               <!-- /.card-header -->
             <div class="card-body">
-                <div class="form-group {{ $errors->has('title') ? 'has-error' : ''}}">
+                <div class="form-group {{ $errors->has('title') ? 'text-danger' : '' }}">
                   <label>Titulo de la Publicación</label>
                   <input name="title" value="{{old('title')}}" type="text" class="form-control" placeholder="ingrese aquí el título de la publicación">
+                 <!-- <div class="poner la clase para sombrear solo el mensaje">-->
                   {!! $errors->first('title','<span class="help-block">:message</span>') !!}
+                 <!-- </div>-->
                   <!-- le ponemos !! a cambio del { y del }-->
                 </div>
 
                 
 
-                <div class="form-group {{ $errors->has('body') ? 'has-error' : ''}}">
+                <div class="form-group {{ $errors->has('body') ? 'text-danger' : ''}}">
                   <label>Contenido de la Publicación</label>
                   <textarea rows= "10" name="body" id="editor" class="form-control" placeholder="Ingrese la publicación Completa">{{old('body')}}</textarea>
                   {!! $errors->first('body','<span class="help-block">:message</span>') !!}
@@ -82,7 +83,7 @@
             </div>
         
           
-            <div class="form-group {{ $errors->has('category') ? 'has-error' : ''}}">
+            <div class="form-group {{ $errors->has('category') ? 'text-danger' : ''}}">
               <label>Categorias</label>
               <select name="category" class="form-control">
                 <option value="">Selecciona una categoria</option>
@@ -94,20 +95,22 @@
                {!! $errors->first('category','<span class="help-block">:message</span>') !!}
             </div>
             
-            <div class="form-group {{ $errors->has('tags') ? 'has-error' : ''}}">
+            <div class="form-group {{ $errors->has('tags') ? 'text-danger' : ''}}">
               
                   <label>Etiquetas </label>
+                  <!-- var_dump(old('tags')) usar doble llaves-->
                   <select name="tags[]" class="select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
                    @foreach($tags as $tag)
                     <option {{collect(old('tags'))->contains($tag->id)? 'selected' : ''}} value="{{$tag->id}}">{{$tag->name}}</option>
                    @endforeach
                    
                   </select>
-              {!! $errors->first('tags','<span class="help-block">:message</span>') !!}
+                  {!! $errors->first('tags','<span class="help-block">:message</span>') !!}
+             
     
             </div>
     
-            <div class="form-group {{ $errors->has('excerpt') ? 'has-error' : ''}}">
+            <div class="form-group {{ $errors->has('excerpt') ? 'text-danger' : ''}}">
               <label>Resumen de la Publicación</label>
               <textarea name="excerpt" class="form-control" placeholder="Ingrese resumen de la publicación">
                 {{old('excerpt')}}
