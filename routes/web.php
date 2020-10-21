@@ -21,7 +21,8 @@ Route::get('admin/posts', 'Admin\PostsController@index');
  //   return view('welcome',compact('posts'));
 //});
 
-Route::get('blog/{id}', 'PostsController@show');
+//Route::get('blog/{id}', 'PostsController@show');
+Route::get('blog/{post:url}', 'PostsController@show');
 
 
 Route::get('/', 'PagesController@home');

@@ -4,6 +4,7 @@ use App\Post;
 use App\Tag;
 use App\Category;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -41,7 +42,7 @@ class PostsController extends Controller
        // dd($request->get('tags')); // es para realizar pruebasb
     	$post = new Post;
     	$post->title = $request->get('title');
-    	$post->url = $request->get('title');
+    	$post->url = str::slug($request->get('title'), '-');
     	$post->body = $request->get('body');
     	$post->excerpt = $request->get('excerpt');
     	$post->published_at = $request->has('published_at') ? Carbon::parse($request->get('published_at')) : null;

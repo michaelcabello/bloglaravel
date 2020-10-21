@@ -9,6 +9,14 @@ class Post extends Model
 	protected $guarded = [];//para desactivar la asignacion masiva	
     protected $dates = ['published_at'];//para que sea instancia de carbon
 
+
+    public function getRouteKeyName()
+    {
+        return 'title';
+        //return ('title');
+    }
+
+
     public function category()//$post->$category->$name
     {
     	return $this -> belongsto(Category::class);
