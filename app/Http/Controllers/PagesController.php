@@ -14,10 +14,13 @@ class PagesController extends Controller
     //				-> latest('published_at')
     //				->get();
     	
-    	$posts = Post::published()->get();
+    	//$posts = Post::published()->get();
+        //$posts = Post::published()->simplepaginate(1);
+        $posts = Post::published()->paginate(2);
     	return view('welcome', compact('posts'));
 
 
     }
 
 }
+

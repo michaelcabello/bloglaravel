@@ -13,7 +13,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
-    @stack('scripts')
+    @stack('styles')
+   
 </head>
 <body>
     <div class="preload"></div>
@@ -24,9 +25,9 @@
                 <div class="pure-menu"></div>
                 <ul class="container-flex list-unstyled">
                     <li><a href="/" class="text-uppercase">Home</a></li>
-                    <li><a href="about.html" class="text-uppercase">About</a></li>
-                    <li><a href="archive.html" class="text-uppercase">Archive</a></li>
-                    <li><a href="contact.html" class="text-uppercase">Contact</a></li>
+                    <li><a href="#" class="text-uppercase">About</a></li>
+                    <li><a href="#" class="text-uppercase">Archive</a></li>
+                    <li><a href="#" class="text-uppercase">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -34,6 +35,8 @@
 
 @yield('contenido')
 
+
+<!--
     <div class="pagination">
         <ul class="list-unstyled container-flex space-center">
             <li><a href="#" class="pagination-active">1</a></li>
@@ -41,7 +44,7 @@
             <li><a href="#">3</a></li>
         </ul>
     </div>
-
+-->
     <section class="footer">
         <footer>
             <div class="container">
@@ -67,6 +70,8 @@
             </div>
         </footer>
     </section>
+
+     @stack('scripts')
     
 </body>
 </html>

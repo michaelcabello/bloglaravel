@@ -8,6 +8,7 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">Lista de Posts</h1>
+             <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"> </i> Crear Publicación</button>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -60,7 +61,11 @@
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->excerpt }}</td>
                         <td>
-                          <a href="#" class="btn btn-xs btn-info"><i class="fas fa-pencil-alt"></i></a>
+                          <a href="{{ route('posts.show', $post)}}" 
+                             class="btn btn-xs btn-default"
+                             target="_blank"
+                             ><i class="fas fa-eye"></i></a>
+                          <a href="{{ route('admin.posts.edit', $post)}}" class="btn btn-xs btn-info"><i class="fas fa-pencil-alt"></i></a>
                           <a href="#" class="btn btn-xs btn-danger"><i class="fas fa-times-circle"></i></a>
                         </td>
                       </tr>
@@ -105,5 +110,10 @@
       
     });
   </script>
+
+
+  <!-- Modal -->
+  
+
 
 @endpush
